@@ -10,6 +10,9 @@
 		83C7F0A121CD33630067985E /* FloatingActionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C7F09721CD33630067985E /* FloatingActionView.framework */; };
 		83C7F0A621CD33630067985E /* FloatingActionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C7F0A521CD33630067985E /* FloatingActionViewTests.swift */; };
 		83C7F0A821CD33630067985E /* FloatingActionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 83C7F09A21CD33630067985E /* FloatingActionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83C7F0B421CD33730067985E /* FloatingActionViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C7F0B121CD33730067985E /* FloatingActionViewAction.swift */; };
+		83C7F0B521CD33730067985E /* FloatingActionViewHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C7F0B221CD33730067985E /* FloatingActionViewHintView.swift */; };
+		83C7F0B621CD33730067985E /* FloatingActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C7F0B321CD33730067985E /* FloatingActionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		83C7F0A021CD33630067985E /* FloatingActionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloatingActionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C7F0A521CD33630067985E /* FloatingActionViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionViewTests.swift; sourceTree = "<group>"; };
 		83C7F0A721CD33630067985E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83C7F0B121CD33730067985E /* FloatingActionViewAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingActionViewAction.swift; sourceTree = "<group>"; };
+		83C7F0B221CD33730067985E /* FloatingActionViewHintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingActionViewHintView.swift; sourceTree = "<group>"; };
+		83C7F0B321CD33730067985E /* FloatingActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingActionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				83C7F09A21CD33630067985E /* FloatingActionView.h */,
+				83C7F0B321CD33730067985E /* FloatingActionView.swift */,
+				83C7F0B121CD33730067985E /* FloatingActionViewAction.swift */,
+				83C7F0B221CD33730067985E /* FloatingActionViewHintView.swift */,
 				83C7F09B21CD33630067985E /* Info.plist */,
 			);
 			path = FloatingActionView;
@@ -148,6 +157,7 @@
 				TargetAttributes = {
 					83C7F09621CD33630067985E = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					83C7F09F21CD33630067985E = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C7F0B521CD33730067985E /* FloatingActionViewHintView.swift in Sources */,
+				83C7F0B621CD33730067985E /* FloatingActionView.swift in Sources */,
+				83C7F0B421CD33730067985E /* FloatingActionViewAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +354,7 @@
 		83C7F0AC21CD33630067985E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.hidemunetakahashi.FloatingActionView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +381,7 @@
 		83C7F0AD21CD33630067985E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +407,7 @@
 		83C7F0AF21CD33630067985E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y4DR2N9467;
 				INFOPLIST_FILE = FloatingActionViewTests/Info.plist;
@@ -409,6 +426,7 @@
 		83C7F0B021CD33630067985E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y4DR2N9467;
 				INFOPLIST_FILE = FloatingActionViewTests/Info.plist;
