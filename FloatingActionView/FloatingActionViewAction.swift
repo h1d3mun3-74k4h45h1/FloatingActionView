@@ -15,7 +15,7 @@ public class FloatingActionViewAction {
     let hintText: String
     let handler: ((FloatingActionViewAction) -> Void)?
     
-    init(actionColor: UIColor, actionImage: UIImage?, hintText: String, handler: ((FloatingActionViewAction) -> Void)?) {
+    public init(actionColor: UIColor, actionImage: UIImage?, hintText: String, handler: ((FloatingActionViewAction) -> Void)?) {
         self.actionColor = actionColor
         self.actionImage = actionImage
         self.hintText = hintText
