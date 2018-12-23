@@ -210,10 +210,10 @@ extension FloatingActionView {
     }
     
     fileprivate func calculateHintViewInitialRect(hintView: FloatingActionViewHintView) -> CGRect {
-        return CGRect.init(x: 0 - hintView.frame.size.width,
-                           y: 0,
-                           width: hintView.frame.size.width,
-                           height: hintView.frame.size.height)
+        return CGRect(x: 0 - hintView.frame.size.width,
+                      y: 0,
+                      width: hintView.frame.size.width,
+                      height: hintView.frame.size.height)
     }
     
     fileprivate func calculateActionButtonAnimatedRect(buttonIndex: Int) -> CGRect  {
