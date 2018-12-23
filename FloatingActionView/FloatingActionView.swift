@@ -107,6 +107,24 @@ public class FloatingActionView: UIView {
         super.updateConstraints()
     }
     
+    public override func didMoveToSuperview() {
+        guard let superView = self.superview else { fatalError() }
+        var constraints = [NSLayoutConstraint]()
+        
+        constraints += NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[self]-8-|",
+            options: [],
+            metrics: nil,
+            views: ["self" : self])
+        constraints += NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[self]-8-|",
+            options: [],
+            metrics: nil,
+            views: ["self" : self])
+        
+        superView.addConstraints(constraints)
+    }
+    
     override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if expanded {
             var tappedButton: UIButton? = nil
@@ -126,7 +144,7 @@ public class FloatingActionView: UIView {
             return super.hitTest(point, with: event)
         }
     }
-        
+    
     public func addAction(_ action: FloatingActionViewAction) {
         actions.append(action)
     }
@@ -221,8 +239,8 @@ extension FloatingActionView {
         button.setImage(action.actionImage, for: .normal)
         button.layer.cornerRadius = actionButtonSize / 2
         button.addTarget(self,
-                  action: #selector(FloatingActionView.actionButtonTapped(sender:)),
-                  for: .touchUpInside)
+                         action: #selector(FloatingActionView.actionButtonTapped(sender:)),
+                         for: .touchUpInside)
         button.alpha = 0.0
         return button
     }
