@@ -11,16 +11,16 @@
 let view = FloatingActionView()
 view.menuButtonIconColor = UIColor.green
 view.addAction(FloatingActionViewAction(actionColor: UIColor.blue,
-actionImage: nil,
-hintText: "Action 1",
-handler: { (action) in
-print("Action 1 Tapped")
+                                        actionImage: nil,
+                                        hintText: "Action 1",
+                                        handler: { (action) in
+                                            print("Action 1 Tapped")
 }))
 view.addAction(FloatingActionViewAction(actionColor: UIColor.purple,
-actionImage: nil,
-hintText: "Action 2",
-handler: { (action) in
-print("Action 2 Tapped")
+                                        actionImage: nil,
+                                        hintText: "Action 2",
+                                        handler: { (action) in
+                                            print("Action 2 Tapped")
 }))
 ```
 
