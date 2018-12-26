@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83A0D5BF21D36F7F00E6A350 /* RoundCornerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A0D5BE21D36F7F00E6A350 /* RoundCornerView.framework */; };
 		83C7F0A121CD33630067985E /* FloatingActionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C7F09721CD33630067985E /* FloatingActionView.framework */; };
 		83C7F0A621CD33630067985E /* FloatingActionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C7F0A521CD33630067985E /* FloatingActionViewTests.swift */; };
 		83C7F0A821CD33630067985E /* FloatingActionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 83C7F09A21CD33630067985E /* FloatingActionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83A0D5BE21D36F7F00E6A350 /* RoundCornerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoundCornerView.framework; path = Carthage/Build/iOS/RoundCornerView.framework; sourceTree = "<group>"; };
 		83C7F09721CD33630067985E /* FloatingActionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FloatingActionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C7F09A21CD33630067985E /* FloatingActionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatingActionView.h; sourceTree = "<group>"; };
 		83C7F09B21CD33630067985E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A0D5BF21D36F7F00E6A350 /* RoundCornerView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83A0D5BD21D36F7F00E6A350 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83A0D5BE21D36F7F00E6A350 /* RoundCornerView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		83C7F08D21CD33630067985E = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +79,7 @@
 				83C7F09921CD33630067985E /* FloatingActionView */,
 				83C7F0A421CD33630067985E /* FloatingActionViewTests */,
 				83C7F09821CD33630067985E /* Products */,
+				83A0D5BD21D36F7F00E6A350 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +135,7 @@
 				83C7F09321CD33630067985E /* Sources */,
 				83C7F09421CD33630067985E /* Frameworks */,
 				83C7F09521CD33630067985E /* Resources */,
+				83A0D5C021D36F8300E6A350 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -206,6 +219,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83A0D5C021D36F8300E6A350 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RoundCornerView.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83C7F09321CD33630067985E /* Sources */ = {
@@ -370,6 +405,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FloatingActionView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -397,6 +436,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FloatingActionView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
