@@ -36,6 +36,30 @@ public class FloatingActionView: UIView {
     
     public var actionButtonSpacing: CGFloat  = 8.0
     
+    public var actionBorderColor = UIColor.black {
+        didSet {
+            createHintViews()
+        }
+    }
+    
+    public var actionFillColor =  UIColor.black {
+        didSet {
+            createHintViews()
+        }
+    }
+    
+    public var actionHasBorder: Bool = false {
+        didSet {
+            createHintViews()
+        }
+    }
+    
+    public var actionTextColor = UIColor.white {
+        didSet {
+            createHintViews()
+        }
+    }
+    
     fileprivate let menuButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -128,15 +152,18 @@ public class FloatingActionView: UIView {
     override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if expanded {
             var tappedButton: UIButton? = nil
+            var tappedPoint: CGPoint? = nil
             actionButtons.forEach { actionButton in
                 let converted: CGPoint = actionButton.convert(point, from: self)
                 if actionButton.bounds.contains(converted) {
                     tappedButton = actionButton
+                    tappedPoint = converted
                 }
             }
             
-            if let tappedButton = tappedButton {
-                return tappedButton
+            if let tappedButton = tappedButton,
+                let tappedPoint = tappedPoint {
+                return tappedButton.hitTest(tappedPoint, with:event)
             } else {
                 return super.hitTest(point, with: event)
             }
@@ -247,7 +274,7 @@ extension FloatingActionView {
     
     fileprivate func createHintView(_ action: FloatingActionViewAction) -> FloatingActionViewHintView {
         let hintView = FloatingActionViewHintView()
-        hintView.configure(with: action)
+        hintView.configure(with: action, actionView: self)
         hintView.alpha = 0.0
         return hintView
     }
@@ -266,6 +293,7 @@ extension FloatingActionView {
         if let handler = action.handler {
             handler(action)
         }
+        expanded = false
     }
 }
 
