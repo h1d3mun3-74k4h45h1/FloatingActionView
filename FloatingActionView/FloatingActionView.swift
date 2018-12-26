@@ -54,6 +54,12 @@ public class FloatingActionView: UIView {
         }
     }
     
+    public var actionHasRound: Bool = false {
+        didSet {
+            createHintViews()
+        }
+    }
+    
     public var actionTextColor = UIColor.white {
         didSet {
             createHintViews()

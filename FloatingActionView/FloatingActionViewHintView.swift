@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RoundCornerView
 
 class FloatingActionViewHintView: UIView {
     enum DrawMode {
@@ -80,6 +81,7 @@ class FloatingActionViewHintView: UIView {
     
     public func configure(with action: FloatingActionViewAction, actionView: FloatingActionView) {
         textView.text = action.hintText
+        
         if actionView.actionHasBorder {
             lineColor = actionView.actionBorderColor
             fillColor = actionView.actionFillColor
@@ -87,13 +89,22 @@ class FloatingActionViewHintView: UIView {
             lineColor = actionView.actionFillColor
             fillColor = actionView.actionFillColor
         }
+        
         textColor = actionView.actionTextColor
+        
         if actionView.actionHasBorder {
             drawMode = .fillAndBorder
         } else {
             drawMode = .fillAll
         }
-        setNeedsDisplay()
+        
+        layoutIfNeeded()
+        
+        if actionView.actionHasRound {
+            textView.rcv.makeRound(corners: [.allCorners], cornerRadius: 5.0)
+        }
+        
+        layoutIfNeeded()
     }
     
     override open class var requiresConstraintBasedLayout: Bool {
